@@ -2,6 +2,8 @@
 
 独立的 magpie 输出样式插件。它在模型调用前注入所选指令，不改写供应商响应，也不依赖 compress-core。
 
+**移植自 OmniRoute 的 Output Styles**。上游来源、revision 和适配范围见 `PROVENANCE.json`，许可证见 `LICENSES/`。
+
 ## 样式
 
 - **Terse prose**：删除客套、填充词和无信息量的措辞。
