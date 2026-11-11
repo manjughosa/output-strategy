@@ -103,7 +103,7 @@ async function boot({ catalog = sampleCatalog, current, lang = "en", failGet = f
 
 describe("generated page catalog", () => {
   test("is current and exposes only style metadata", () => {
-    const source = readFileSync(new URL("../page/catalog.js", import.meta.url), "utf8")
+    const source = readFileSync(new URL("../page/catalog.js", import.meta.url), "utf8").replace(/\r\n/g, "\n")
     expect(source).toBe(renderPageCatalog())
     const sandbox = {}
     vm.createContext(sandbox)
@@ -240,7 +240,7 @@ describe("host language", () => {
   })
 
   test("closes each responsive media block and increments the shipping version", () => {
-    const css = readFileSync(new URL("../page/style.css", import.meta.url), "utf8")
+    const css = readFileSync(new URL("../page/style.css", import.meta.url), "utf8").replace(/\r\n/g, "\n")
     const opens = (css.match(/{/g) || []).length
     const closes = (css.match(/}/g) || []).length
     expect(closes).toBe(opens)
